@@ -264,3 +264,14 @@ textarea {
   }
 }
 
+.main_text_container {
+  width: 600px;
+  margin: 100px auto;
+  border: 2px solid black;
+}
+
+.main_paragraph {
+  padding: 2rem;
+}
+
+
