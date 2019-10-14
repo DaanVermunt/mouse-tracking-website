@@ -10,7 +10,9 @@ document.getElementsByTagName("body").item(0).onmousedown = (e) => {
 document.getElementsByTagName("body").item(0).onmouseup = (e) => {
   if (window.getSelection) {
     const text = window.getSelection().toString()
-    console.log(`Selected text: ${text}, based on function`)
+    if (text !== ''){
+      console.log(`Selected text: ${text}, based on function`)
+    }
   } else if (document.selection && document.selection.type != "Control") {
     const text = window.selection.createRange().text
     console.log(`Selected text: ${text}, based on object`)
