@@ -265,13 +265,14 @@ textarea {
 }
 
 .main_text_container {
-  width: 600px;
+  width: 50%;
   margin: 100px auto;
   border: 2px solid black;
+  padding: 2rem;
 }
 
 .main_paragraph {
-  padding: 2rem;
+  font-size: 2rem;
 }
 
 
