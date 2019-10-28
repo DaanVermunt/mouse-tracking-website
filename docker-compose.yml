@@ -5,23 +5,20 @@ services:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=sakura
+      - MYSQL_USER=user
       - MYSQL_PASSWORD=pass
-      - MYSQL_DATABASE=sakura_genie
+      - MYSQL_DATABASE=mouse_tracker
     volumes:
       - ./docker/data/mysql:/var/lib/mysql
     ports:
       - "3336:3306"     
   backend:
-    build:
-      context: ./backend/
-      dockerfile: Dockerfile
-    depends_on:
+    image: golang:1.13-alpine
+    volumes:
+      - ./backend:/go/src/backend
+    working_dir: /go/src/backend
+    links:
       - mysql
     ports:
       - "8080:8080"
-    networks:
-      - backend
-
-networks:
-  backend:    
+    command: go run main.go

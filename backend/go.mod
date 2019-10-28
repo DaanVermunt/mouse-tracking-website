@@ -1,7 +1,10 @@
-module github.com/callicoder/go-docker-compose
+module backend
 
 require (
-	github.com/go-redis/redis v6.14.2+incompatible
-	github.com/gorilla/context v1.1.1 // indirect
+	github.com/go-sql-driver/mysql v1.4.1
 	github.com/gorilla/mux v1.6.2
+	github.com/jinzhu/gorm v1.9.11
+	google.golang.org/appengine v1.6.5 // indirect
 )
+
+go 1.13
