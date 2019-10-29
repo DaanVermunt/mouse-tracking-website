@@ -22,6 +22,7 @@ func (a *App) createRecord(w http.ResponseWriter, r *http.Request) {
 	a.DB.Create(&record)
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.WriteHeader(http.StatusCreated)
 	response, _ := json.Marshal(record)
 	w.Write(response)

@@ -1,0 +1,3 @@
+Force mouse behavious:
+	Block arrow keys to move scrollbar
+	Make screen small enough to force scroll behaviour

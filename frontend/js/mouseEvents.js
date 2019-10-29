@@ -1,35 +1,35 @@
 //Set listeners for mouse events
 document.getElementsByTagName("body").item(0).onmousemove = (e) => {
-  // console.log(`mouse at: [${e.clientX}, ${e.clientY}]`)
-  console.log(`mouse move`)
+  moveObject.x = e.clientX
+  moveObject.y = e.clientY
 }
 
 document.getElementsByTagName("body").item(0).onmousedown = (e) => {
-  const x = e.clientX / window.screen.availWidth
-  const y = e.clientY / window.screen.availHeight
-  console.log(`click at: [${x}, ${y}]`)
+  moveObject.clickedLeft = true
 }
 
+document.getElementsByTagName("body").item(0).oncontextmenu = (e) => {
+  moveObject.clickedRight = true
+}
 
 document.getElementsByTagName("body").item(0).onmouseup = (e) => {
   if (window.getSelection) {
-    const text = window.getSelection().toString()
-    if (text !== '') {
-      console.log(`Selected text: ${text}, based on function`)
-    }
+    moveObject.selectedText = window.getSelection().toString()
   } else if (document.selection && document.selection.type != "Control") {
-    const text = window.selection.createRange().text
-    console.log(`Selected text: ${text}, based on object`)
+    moveObject.selectedText = window.selection.createRange().text
   }
 }
 
 document.getElementsByTagName("body").item(0).onscroll = (e) => {
-  console.log("scroll event recorded");
+  moveObject.scrollLoc = window.pageYOffset || document.documentElement.scrollTop
 }
 
 window.addEventListener('blur', () => [
-  console.log("STOP CAPTURING")
+  moveObject.onScreen = false
 ])
+
 window.addEventListener('focus', () => [
-  console.log("START AGAIN")
+  moveObject.onScreen = true
 ])
+
+
