@@ -132,13 +132,13 @@ just put it before the other scripts in the bottom of the page:
     <script src="https://cdn.polyfill.io/v3/polyfill.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/_plugins.js"></script>
+    <script src="js/_router.js"></script>
 </body>
 ```
 
 If you like to just include the polyfills yourself, you could include them in
-`js/plugins.js`. When you have a bunch of polyfills to load in, you could
+`js/_plugins.js`. When you have a bunch of polyfills to load in, you could
 also create a `polyfills.js` file in the `js/vendor` directory or include the files 
 individually and combine them using a build tool. Always ensure that the polyfills 
 are all loaded before any other JavaScript.

@@ -1,5 +1,3 @@
-
-
 let lastSendMoveObject = {
   x: null,
   y: null,
@@ -49,8 +47,6 @@ function prepReqData() {
 
 async function uploadDataLoop() {
   while (true) {
-    // between 4 and 12 seconds
-    // const sleeptime = 4000 + (8000 * Math.random());
     const equal = compareObjects()
 
     if (!equal) {
@@ -65,7 +61,7 @@ async function uploadDataLoop() {
         contentType: 'text/plain',
         data: JSON.stringify({
           timestamp: (new Date()).toISOString(),
-          userId: "h%f982!3hs7k$hi?u",
+          userId: getCookie("userId"),
         }),
         success: (res, status) => {
           console.log(res)
@@ -79,7 +75,17 @@ async function uploadDataLoop() {
   }
 }
 
-uploadDataLoop().then(() => {
-  console.log("Done")
-})
+async function probeLoop() {
+  // while (true) {
+  // between 4 and 12 seconds
+  console.log("TEST")
+  const sleeptime = 4000 + (8000 * Math.random());
 
+  $("#probe").modal({
+    keyboard: false,
+  })
+
+  await sleep(sleeptime)
+  // }
+
+}

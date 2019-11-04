@@ -264,7 +264,7 @@ textarea {
   }
 }
 
-.main_text_container {
+#main_text_container {
   width: 50%;
   margin: 100px auto;
   border: 2px solid black;
@@ -274,5 +274,3 @@ textarea {
 .main_paragraph {
   font-size: 2rem;
 }
-
-

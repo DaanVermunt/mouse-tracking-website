@@ -32,4 +32,3 @@ window.addEventListener('focus', () => [
   moveObject.onScreen = true
 ])
 
-
