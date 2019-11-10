@@ -37,7 +37,6 @@ function compareObjects() {
 
 function prepReqData() {
   lastSendMoveObject = {...moveObject}
-  lastSendMoveObject.timestamp = (new Date()).toISOString()
 
   moveObject.clickedLeft = false
   moveObject.clickedRight = false
@@ -62,6 +61,7 @@ async function uploadDataLoop() {
         data: JSON.stringify({
           timestamp: (new Date()).toISOString(),
           userId: getCookie("userId"),
+          ...reqData,
         }),
         success: (res, status) => {
           console.log(res)
