@@ -15,4 +15,5 @@ func (a *App) initRoutes() {
 	a.Router.HandleFunc("/submit_question", a.submitQuestion).Methods(http.MethodPost, http.MethodOptions)
 	a.Router.HandleFunc("/create_record", a.createRecord).Methods(http.MethodPost, http.MethodOptions)
 	a.Router.HandleFunc("/records", a.getRecords).Methods(http.MethodGet)
+	a.Router.HandleFunc("/probe", a.addProbeResponse).Methods(http.MethodPost, http.MethodOptions)
 }

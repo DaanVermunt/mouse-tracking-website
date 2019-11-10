@@ -88,3 +88,11 @@ async function probeLoop() {
   // }
 
 }
+
+const probeResponseData = {
+  userId: null,
+  answer: null,
+  page: null,
+  delayTime: null,
+  timeToAnswer: null,
+}

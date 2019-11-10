@@ -7,10 +7,10 @@ import (
 	"net/http"
 )
 
-func (a *App) addProbeResponse(w http.ResponseWriter, r *http.Request) {
-	var probe model.Probe
+func (a *App) submitQuestion(w http.ResponseWriter, r *http.Request) {
+	var quest model.Question
 	decode := json.NewDecoder(r.Body)
-	if err := decode.Decode(&probe); err != nil {
+	if err := decode.Decode(&quest); err != nil {
 		fmt.Println(err)
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(500)
@@ -19,7 +19,7 @@ func (a *App) addProbeResponse(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	a.DB.Create(&probe)
+	a.DB.Create(&quest)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
