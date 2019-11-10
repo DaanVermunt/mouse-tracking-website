@@ -75,24 +75,44 @@ async function uploadDataLoop() {
   }
 }
 
-async function probeLoop() {
-  // while (true) {
+async function startProbeTimer() {
   // between 4 and 12 seconds
   const sleeptime = 4000 + (8000 * Math.random());
+  const probTime = new Date()
+
+  console.log(sleeptime)
+  for (let i = 1; i <= 6; i++) {
+    $(`#probe_answer_${i}`).attr("onclick", `postProbe(${i}, ${sleeptime}, ${probTime.getTime()})`)
+  }
+
+  await sleep(sleeptime)
 
   $("#probe").modal({
     keyboard: false,
   })
 
-  await sleep(sleeptime)
-  // }
-
 }
 
-const probeResponseData = {
-  userId: null,
-  answer: null,
-  page: null,
-  delayTime: null,
-  timeToAnswer: null,
+
+function postProbe(answer, delayTime, timeStartTime) {
+
+  const probeResponseData = {
+    userId: getCookie("userId"),
+    answer: answer,
+    page: parseInt(getCookie("currentPage")),
+    delayTime: Math.round(delayTime),
+    timeToAnswer: Math.round((new Date()).getTime() - (timeStartTime + delayTime)),
+    timestamp: (new Date()).toISOString(),
+  }
+
+  $.post({
+    url: "http://localhost:8080/probe",
+    crossDomain: true,
+    crossOrigin: "*",
+    contentType: 'text/plain',
+    data: JSON.stringify(probeResponseData),
+    success: (res, status) => {
+      console.log("Thanks for answering!")
+    },
+  })
 }
