@@ -47,11 +47,10 @@ function prepReqData() {
 async function uploadDataLoop() {
   while (true) {
     const equal = compareObjects()
-
-    if (!equal) {
+    const userId = getCookie("userId")
+    if (!equal && userId) {
 
       const reqData = prepReqData()
-      console.log(reqData)
 
       $.post({
         url: "http://localhost:8080/create_record",
@@ -60,13 +59,9 @@ async function uploadDataLoop() {
         contentType: 'text/plain',
         data: JSON.stringify({
           timestamp: (new Date()).toISOString(),
-          userId: getCookie("userId"),
+          userId: userId,
           ...reqData,
-        }),
-        success: (res, status) => {
-          console.log(res)
-          console.log(status)
-        },
+        })
       })
     } else {
       console.log("No request send")
@@ -88,6 +83,7 @@ async function startProbeTimer() {
   await sleep(sleeptime)
 
   $("#probe").modal({
+    backdrop: "static",
     keyboard: false,
   })
 

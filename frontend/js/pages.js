@@ -37,6 +37,8 @@ const pages = [
 ]
 
 function askQuestion() {
+  $('#main_text_container').css("color", "white")
+
   const pageNr = parseInt(getCookie("currentPage"))
   const page = pages[pageNr]
 
@@ -58,11 +60,13 @@ function askQuestion() {
 
   $("#question").modal({
     keyboard: false,
+    backdrop: "static",
   })
 
 }
 
 function submitAnswer(correct, nextPage) {
+  $('#main_text_container').css("color", "black")
   $.post({
     url: "http://localhost:8080/submit_question",
     crossDomain: true,
