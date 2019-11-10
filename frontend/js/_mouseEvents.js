@@ -31,4 +31,3 @@ window.addEventListener('blur', () => [
 window.addEventListener('focus', () => [
   moveObject.onScreen = true
 ])
-
