@@ -14,6 +14,7 @@ form.addEventListener('submit', (event) => {
     distraction: Number.parseInt($('#distractionSelect').val()),
     usingMouse: document.getElementById('mouseRadiosMouse').checked,
     readWarAndPeace: document.getElementById('warPeaceRadioTrue').checked,
+    readGrimm: document.getElementById('grimmRadioTrue').checked,
   }
 
   $.post({

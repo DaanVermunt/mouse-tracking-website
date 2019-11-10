@@ -29,7 +29,7 @@ func (a *App) Initialize(user, password, dbname string) {
 	if err != nil {
 		panic(err.Error())
 	}
-	db.AutoMigrate(&model.Record{}, &model.Questionnaire{})
+	db.AutoMigrate(&model.Record{}, &model.Questionnaire{}, &model.Question{})
 
 	a.DB = db
 }

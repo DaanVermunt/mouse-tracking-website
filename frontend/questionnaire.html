@@ -18,16 +18,26 @@
   <!--  TODO Intergrate action-->
   <form id="qForm">
     <div class="blockquote">
-      <p class="mb-0">
-        Welcome Participant, thanks... <br>
-        Some intro text where we explain what the goal of the experiment is, who we are and why we are doing what we are
-        doing.
+      <br class="mb-0">
+      <h2>Dear participant,</h2> <br>
+      Thank you for participating in our research for the course Social Signal Processing. This research is about the
+      relation between mouse behaviour and attention. Therefore, from the next page on your mouse cursor is being
+      tracked (its position on the screen and where you click). We’re also going to ask you sometimes what your mind is
+      on (e.g. what you were reading or something else).<br>
+      We would like to emphasize that it is ok if your attention is not always with the task, if this is something
+      that’s natural to you.<br>
+      Because we are interested in your mouse behaviour, you can’t participate on a mobile device or use a touchscreen,
+      trackpad or drawingpad.<br>
+      This research will take you about 15 minutes. <br>
+      If you have any questions at this or a later point, feel free to contact us on d.vermunt@tudelft.nl.<br>
+      <br>
+      Before we start, we would like to know some basic information from you.<br>
       </p>
     </div>
     <!--    TODO might become age group-->
     <div class="form-group">
       <label for="ageInput">Age</label>
-      <input type="number" class="form-control" id="ageInput" required>
+      <input type="number" class="form-control" id="ageInput" min="18" max="99" required>
     </div>
     <div class="form-group">
       <label for="genderSelect">Gender</label>
@@ -42,41 +52,44 @@
       <label for="levelOfEducationSelect">Level of Education</label>
       <select class="form-control" name="distraction" id="levelOfEducationSelect" required>
         <option value="" disabled selected>Select education...</option>
-        <option value="high_school">High School</option>
-        <option value="high_education">Higher education</option>
-        <option value="master">Masters degree</option>
+        <option value="primary_school">Primary School</option>
+        <option value="high_education">Middle or High school</option>
+        <option value="bachelors">Bachelors</option>
+        <option value="masters">Masters</option>
+        <option value="phd">PhD or doctorate</option>
       </select>
     </div>
     <div class="form-group">
       <label for="distractionSelect">Distraction of Environment</label>
       <select class="form-control" name="distraction" id="distractionSelect" required>
-        <option value="" disabled selected>Select level of distraction...</option>
-        <option value="0">Super distracting</option>
-        <option value="1">Mildly distracting</option>
-        <option value="2">Neutral</option>
-        <option value="3">Mildly focusable</option>
-        <option value="4">Super focusable</option>
+        <option value="" disabled selected>Level of distraction...</option>
+        <option value="0">None</option>
+        <option value="1">Little</option>
+        <option value="2">Middle</option>
+        <option value="3">High</option>
       </select>
     </div>
 
     <div class="form-group">
-      <div>How are you controlling the cursor?</div>
+      <div>We need you to use a mouse to control the cursor. So, you can’t use your trackpad or any sort of drawing pad.
+        Are you using your mouse?
+      </div>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="mouseRadios" id="mouseRadiosMouse" value="true" required>
         <label class="form-check-label" for="mouseRadiosMouse">
-          A Mouse
+          Yes
         </label>
       </div>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="mouseRadios" id="mouseRadiosTrack" value="false" required>
         <label class="form-check-label" for="mouseRadiosTrack">
-          Not a Mouse
+          No
         </label>
       </div>
     </div>
 
     <div class="form-group">
-      <div>Have You read war and peace?</div>
+      <div>Have you read the first chapters of War and Peace by Tolstoy before?</div>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="warPeaceRadios" id="warPeaceRadioTrue" value="true" required>
         <label class="form-check-label" for="warPeaceRadioTrue">
@@ -93,15 +106,63 @@
     </div>
 
     <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="agree" required>
-        <label class="form-check-label" for="agree">
-          I agree with the <a target="_blank" href="http://google.com">terms and conditions</a>.
+      <div>Have you read any stories of the Grimm Brothers before?</div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="grimmRadios" id="grimmRadioTrue" value="true" required>
+        <label class="form-check-label" for="grimmRadioTrue">
+          Yes
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="grimmRadios" id="grimmRadioFalse" value="false"
+               required>
+        <label class="form-check-label" for="grimmRadioFalse">
+          No
         </label>
       </div>
     </div>
 
+    <div class="blockquote">
+      <p>
+        <b>I have read the above stated information and agree to the following:</b>
+      </p>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="understand" required>
+      <label class="form-check-label" for="understand">
+        I understand the information and I was able to contact the researchers beforehand.
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="voluntary" required>
+      <label class="form-check-label" for="voluntary">
+        I am aware that my participation is voluntarily, and I can quit any time I want.
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="collection" required>
+      <label class="form-check-label" for="collection">
+        I agree to the data collection as stated above in the scope of this scientific research.
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="cookies" required>
+      <label class="form-check-label" for="cookies">
+        I agree that this website uses cookies for website performance only.
+      </label>
+    </div>
+
+      <p>
+        <b>We want to ask you if you can use your mouse cursor to point where you look at the screen from now on.</b>
+      </p>
+
+
     <button type="submit" class="btn btn-primary">Start rest of Survey</button>
+
   </form>
 </div>
 

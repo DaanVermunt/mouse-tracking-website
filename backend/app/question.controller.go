@@ -5,12 +5,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"strconv"
-	"time"
 )
 
-func (a *App) submitQuestionnaire(w http.ResponseWriter, r *http.Request) {
-	var quest model.Questionnaire
+func (a *App) submitQuestion(w http.ResponseWriter, r *http.Request) {
+	var quest model.Question
 	decode := json.NewDecoder(r.Body)
 	if err := decode.Decode(&quest); err != nil {
 		fmt.Println(err)
@@ -22,22 +20,10 @@ func (a *App) submitQuestionnaire(w http.ResponseWriter, r *http.Request) {
 	}
 
 	a.DB.Create(&quest)
-	questID := strconv.Itoa(int(quest.ID))
-
-	expire := time.Now().AddDate(0, 1, 1)
-	cookie := http.Cookie{
-		Name:       "userId",
-		Value:      questID,
-		Path:       "/",
-		Domain:     "localhost",
-		Expires:    expire,
-	}
-
-	http.SetCookie(w, &cookie)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.WriteHeader(http.StatusCreated)
-	response, _ := json.Marshal(map[string]string{"status": "success", "cookieId": questID})
+	response, _ := json.Marshal(map[string]string{"status": "success"})
 	w.Write(response)
 }

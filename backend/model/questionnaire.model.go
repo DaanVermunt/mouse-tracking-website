@@ -15,4 +15,5 @@ type Questionnaire struct {
 	Distraction      int    `json:"distraction"`
 	UsingMouse       bool   `json:"usingMouse"`
 	ReadWarAndPeace  bool   `json:"readWarAndPeace"`
+	ReadGrimm        bool   `json:"readGrimm"`
 }

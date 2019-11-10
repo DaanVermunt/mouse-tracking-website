@@ -78,7 +78,6 @@ async function uploadDataLoop() {
 async function probeLoop() {
   // while (true) {
   // between 4 and 12 seconds
-  console.log("TEST")
   const sleeptime = 4000 + (8000 * Math.random());
 
   $("#probe").modal({
