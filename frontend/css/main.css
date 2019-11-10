@@ -268,7 +268,7 @@ textarea {
   width: 50%;
   margin: 100px auto;
   border: 2px solid black;
-  padding: 2rem;
+  padding: 2rem 2rem 3rem;
 }
 
 .main_paragraph {
