@@ -68,7 +68,7 @@ function askQuestion() {
 function submitAnswer(correct, nextPage) {
   $('#main_text_container').css("color", "black")
   $.post({
-    url: "http://localhost:8080/submit_question",
+    url: `${hostUrl}/submit_question`,
     crossDomain: true,
     crossOrigin: "*",
     contentType: 'text/plain',

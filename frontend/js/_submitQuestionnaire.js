@@ -18,7 +18,7 @@ form.addEventListener('submit', (event) => {
   }
 
   $.post({
-        url: "http://localhost:8080/submit_quest",
+        url: `${hostUrl}/submit_quest`,
         crossDomain: true,
         crossOrigin: "*",
         contentType: 'text/plain',

@@ -53,7 +53,7 @@ async function uploadDataLoop() {
       const reqData = prepReqData()
 
       $.post({
-        url: "http://localhost:8080/create_record",
+        url: `${hostUrl}/create_record`,
         crossDomain: true,
         crossOrigin: "*",
         contentType: 'text/plain',
@@ -102,7 +102,7 @@ function postProbe(answer, delayTime, timeStartTime) {
   }
 
   $.post({
-    url: "http://localhost:8080/probe",
+    url: `${hostUrl}/probe`,
     crossDomain: true,
     crossOrigin: "*",
     contentType: 'text/plain',
