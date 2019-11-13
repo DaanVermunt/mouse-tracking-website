@@ -29,7 +29,6 @@ func (a *App) submitQuestionnaire(w http.ResponseWriter, r *http.Request) {
 		Name:       "userId",
 		Value:      questID,
 		Path:       "/",
-		Domain:     "localhost",
 		Expires:    expire,
 	}
 

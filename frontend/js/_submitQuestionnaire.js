@@ -11,7 +11,6 @@ form.addEventListener('submit', (event) => {
     age: Number.parseInt($('#ageInput').val()),
     gender: $('#genderSelect').val(),
     levelOfEducation: $('#levelOfEducationSelect').val(),
-    distraction: Number.parseInt($('#distractionSelect').val()),
     usingMouse: document.getElementById('mouseRadiosMouse').checked,
     readWarAndPeace: document.getElementById('warPeaceRadioTrue').checked,
     readGrimm: document.getElementById('grimmRadioTrue').checked,

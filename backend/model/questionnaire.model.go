@@ -12,7 +12,6 @@ type Questionnaire struct {
 	Age              int    `json:"age"`
 	Gender           string `json:"gender"`
 	LevelOfEducation string `json:"levelOfEducation"`
-	Distraction      int    `json:"distraction"`
 	UsingMouse       bool   `json:"usingMouse"`
 	ReadWarAndPeace  bool   `json:"readWarAndPeace"`
 	ReadGrimm        bool   `json:"readGrimm"`
