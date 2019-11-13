@@ -1,4 +1,8 @@
-const hostUrl = "http://192.168.178.31:5000"
+// FOR PROD
+// const hostUrl = "http://192.168.178.31:5000"
+
+// FOR DEV
+const hostUrl = "http://localhost:8080"
 
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();

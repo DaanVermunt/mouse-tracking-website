@@ -17,24 +17,25 @@
 <div class="container">
   <!--  TODO Intergrate action-->
   <form id="qForm">
+
     <div class="blockquote">
       <br class="mb-0">
       <h2>Dear participant,</h2> <br>
       Thank you for participating in our research for the course Social Signal Processing. This research is about the
       relation between mouse behaviour and attention. Therefore, from the next page on your mouse cursor is being
-      tracked (its position on the screen and where you click). We’re also going to ask you sometimes what is on your mind
-      (e.g. what you were reading or something else).<br>
+      tracked (its position on the screen and where you click). We’re also going to ask you sometimes what is on your
+      mind (e.g. what you were reading or something else).<br>
       We would like to emphasize that it is ok if your attention is not always with the task, if this is something
-      that’s natural to you.<br>
-      Because we are interested in your mouse behaviour, you can’t participate on a mobile device or use a touchscreen,
-      trackpad or drawingpad.<br>
-      This research will take you about 15 minutes. <br>
-      If you have any questions at this or a later point, feel free to contact us on d.vermunt@tudelft.nl.<br>
+      that’s natural to you. After each section, we ask you to answer a short question on the content you just read.<br>
+      Because we are interested in your mouse behaviour, you can’t participate on a mobile device or use a touchscreen
+      or drawing tablet. You can use either your mouse, trackpad, or trackpoint.<br>
+      This experiment will take you about 15 minutes.<br>
+      If you have any questions at this or a later point, feel free to contact us on d.vermunt@student.tudelft.nl.<br>
       <br>
       Before we start, we would like to know some basic information from you.<br>
       </p>
     </div>
-    <!--    TODO might become age group-->
+
     <div class="form-group">
       <label for="ageInput">Age</label>
       <input type="number" class="form-control" id="ageInput" min="18" max="99" required>
@@ -59,20 +60,10 @@
         <option value="phd">PhD or doctorate</option>
       </select>
     </div>
-    <div class="form-group">
-      <label for="distractionSelect">Distraction of Environment</label>
-      <select class="form-control" name="distraction" id="distractionSelect" required>
-        <option value="" disabled selected>Level of distraction...</option>
-        <option value="0">None</option>
-        <option value="1">Little</option>
-        <option value="2">Middle</option>
-        <option value="3">High</option>
-      </select>
-    </div>
 
     <div class="form-group">
-      <div>We need you to use a mouse to control the cursor. So, you can’t use your trackpad or any sort of drawing pad.
-        Are you using your mouse?
+      <div>We need you to use a mouse to control the cursor. So, you can’t use a touchscreen or any sort of drawing pad.
+        Are you using a mouse, a trackpoint or a touchpad?
       </div>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="mouseRadios" id="mouseRadiosMouse" value="true" required>
@@ -106,7 +97,9 @@
     </div>
 
     <div class="form-group">
-      <div>Have you read any stories of the Grimm Brothers before?</div>
+      <div>Have you read either one of [The Golden Goose, The Straw, the Coal and the Bean, The White Snake] all by the
+        Grimm Brothers before?
+      </div>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="grimmRadios" id="grimmRadioTrue" value="true" required>
         <label class="form-check-label" for="grimmRadioTrue">
@@ -156,12 +149,17 @@
       </label>
     </div>
 
-      <p>
-        <b>We want to ask you if you can use your mouse cursor to point where you look at the screen from now on.</b>
-      </p>
+    <p>
+      <b>We want to ask you to make sure that from now on you focus your attention for the next 15 minutes on the
+        experiment at hand. Also make sure that you finish the experiment in a low-distractor environment.</b>
+    </p>
+
+    <b>
+      <b>Lastly, we want to ask to use your mouse cursor to point where you look at the screen from now on.</b>
+    </p>
 
 
-    <button type="submit" class="btn btn-primary">Start rest of Survey</button>
+    <button type="submit" class="btn btn-primary">Start Experiment</button>
 
   </form>
 </div>
