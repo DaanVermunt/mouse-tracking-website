@@ -182,6 +182,7 @@ function submitAnswer(correct, nextPage) {
       correct: correct,
       page: nextPage - 1,
       userId: getCookie("userId"),
+      book: getCookie("reads"),
     }),
     success: (res, status) => {
       setPage(nextPage)
