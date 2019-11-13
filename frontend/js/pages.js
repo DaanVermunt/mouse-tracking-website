@@ -214,7 +214,7 @@ function setPage(pageNr) {
     `)
 
     if (page.probe) {
-      startProbeTimer()
+      startProbeTimer(true)
     }
 
   } else {

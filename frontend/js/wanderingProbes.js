@@ -70,14 +70,13 @@ async function uploadDataLoop() {
   }
 }
 
-async function startProbeTimer() {
+async function startProbeTimer(firstProbe) {
   // between 4 and 12 seconds
   const sleeptime = 4000 + (8000 * Math.random());
   const probTime = new Date()
 
-  console.log(sleeptime)
   for (let i = 1; i <= 6; i++) {
-    $(`#probe_answer_${i}`).attr("onclick", `postProbe(${i}, ${sleeptime}, ${probTime.getTime()})`)
+    $(`#probe_answer_${i}`).attr("onclick", `postProbe(${i}, ${sleeptime}, ${probTime.getTime()}, ${firstProbe})`)
   }
 
   await sleep(sleeptime)
@@ -90,7 +89,11 @@ async function startProbeTimer() {
 }
 
 
-function postProbe(answer, delayTime, timeStartTime) {
+function postProbe(answer, delayTime, timeStartTime, firstProbe) {
+
+  if (firstProbe) {
+    startProbeTimer(false)
+  }
 
   const probeResponseData = {
     userId: getCookie("userId"),
