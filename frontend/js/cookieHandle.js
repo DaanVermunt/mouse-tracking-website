@@ -1,4 +1,4 @@
-const hostUrl = "http://192.168.178.31:8080"
+const hostUrl = "http://192.168.178.31:5000"
 
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
