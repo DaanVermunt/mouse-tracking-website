@@ -25,7 +25,9 @@ func (a *App) Initialize(user, password, dbname string) {
 	a.Router = mux.NewRouter()
 	a.initRoutes()
 
+	time.Sleep(time.Duration(10) * time.Second)
 	db, err := gorm.Open("mysql", "user:pass@(mysql:3306)/mouse_tracker?charset=utf8&parseTime=True&loc=Local")
+
 	if err != nil {
 		panic(err.Error())
 	}

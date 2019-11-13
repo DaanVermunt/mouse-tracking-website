@@ -9,7 +9,7 @@ services:
       - MYSQL_PASSWORD=pass
       - MYSQL_DATABASE=mouse_tracker
     volumes:
-      - ./docker/data/mysql:/var/lib/mysql
+      - ./docker-prod/data/mysql:/var/lib/mysql
     ports:
       - "3336:3306"     
   backend:
@@ -18,6 +18,9 @@ services:
       - ./backend:/go/src/backend
     working_dir: /go/src/backend
     links:
+      - mysql
+    restart: on-failure
+    depends_on:
       - mysql
     ports:
       - "5000:8080"

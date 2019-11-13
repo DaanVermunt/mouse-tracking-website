@@ -1,3 +1,6 @@
 *.idea*
 docker
 docker/*
+
+docker-prod
+docker-prod/*
