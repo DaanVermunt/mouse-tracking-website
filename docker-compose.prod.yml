@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  mysql:
+  mysql_prod:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=root
@@ -18,10 +18,10 @@ services:
       - ./backend:/go/src/backend
     working_dir: /go/src/backend
     links:
-      - mysql
+      - mysql_prod
     restart: on-failure
     depends_on:
-      - mysql
+      - mysql_prod
     ports:
       - "5000:8080"
     command: go run main.go
