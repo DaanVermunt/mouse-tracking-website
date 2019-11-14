@@ -29,8 +29,12 @@ func (a *App) Initialize(user, password, dbname string) {
 	db, err := gorm.Open("mysql", "user:pass@(mysql:3306)/mouse_tracker?charset=utf8&parseTime=True&loc=Local")
 
 	if err != nil {
-		panic(err.Error())
+		db, err = gorm.Open("mysql", "user:pass@(mysql_prod:3306)/mouse_tracker?charset=utf8&parseTime=True&loc=Local")
+		if err != nil {
+			panic(err.Error())
+		}
 	}
+
 	db.AutoMigrate(&model.Record{}, &model.Questionnaire{}, &model.Question{}, &model.Probe{})
 
 	a.DB = db
