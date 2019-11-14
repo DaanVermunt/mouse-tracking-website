@@ -72,7 +72,13 @@ async function uploadDataLoop() {
 
 async function startProbeTimer(firstProbe) {
   // between 4 and 12 seconds
-  const sleeptime = 4000 + (8000 * Math.random());
+  let sleeptime
+  if (firstProbe) {
+    sleeptime = 10 * 1000 + (20 * 1000 * Math.random());
+  } else {
+    sleeptime = 20 * 1000 + (10 * 1000 * Math.random());
+  }
+
   const probTime = new Date()
 
   for (let i = 1; i <= 6; i++) {

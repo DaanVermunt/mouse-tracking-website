@@ -221,6 +221,7 @@ function setPage(pageNr) {
   } else {
     deleteCookie('currentPage')
     deleteCookie('userId')
+
     //  Show thank you screen
     container.append(`
       Thank you for taking the experiment.
