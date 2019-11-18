@@ -168,7 +168,6 @@ function askQuestion() {
     keyboard: false,
     backdrop: "static",
   })
-
 }
 
 function submitAnswer(correct, nextPage) {

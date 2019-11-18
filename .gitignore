@@ -4,3 +4,6 @@ docker/*
 
 docker-prod
 docker-prod/*
+
+frontend/js/config.js
+

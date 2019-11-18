@@ -19,6 +19,8 @@ func (a *App) submitQuestion(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	fmt.Println(quest)
+
 	a.DB.Create(&quest)
 
 	w.Header().Set("Content-Type", "application/json")
