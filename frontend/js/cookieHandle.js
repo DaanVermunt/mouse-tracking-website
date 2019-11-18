@@ -1,9 +1,3 @@
-// FOR PROD
-// const hostUrl = "http://131.180.125.44:5000"
-
-// FOR DEV
-const hostUrl = "http://localhost:5000"
-
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
