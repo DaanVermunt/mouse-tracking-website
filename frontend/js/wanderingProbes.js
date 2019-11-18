@@ -7,6 +7,8 @@ let lastSendMoveObject = {
   scrollLoc: null,
   onScreen: null,
   timestamp: null,
+  screenWidth: null,
+  screenHeight: null,
 }
 
 let moveObject = {
@@ -59,6 +61,8 @@ async function uploadDataLoop() {
         contentType: 'text/plain',
         data: JSON.stringify({
           timestamp: (new Date()).toISOString(),
+          screenWidth: $(window).width(),
+          screenHeight: $(window).height(),
           userId: userId,
           ...reqData,
         })

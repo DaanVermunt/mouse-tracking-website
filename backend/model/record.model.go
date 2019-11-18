@@ -17,4 +17,6 @@ type Record struct {
 	SelectedText string     `json:"selectedText"`
 	X            int        `json:"x"`
 	Y            int        `json:"y"`
+	ScreenWidth      int    `json:"screenWidth"`
+	ScreenHeight     int    `json:"screenHeight"`
 }
