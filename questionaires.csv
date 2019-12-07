@@ -1,0 +1,7 @@
+id,created_at,updated_at,deleted_at,screen_width,screen_height,age,gender,level_of_education,using_mouse,read_war_and_peace,read_grimm
+1,"2019-11-14 12:25:42","2019-11-14 12:25:42",NULL,1838,949,19,female,primary_school,0,0,0
+2,"2019-11-14 12:56:59","2019-11-14 12:56:59",NULL,1482,427,0,,high_education,1,0,0
+3,"2019-11-14 13:09:39","2019-11-14 13:09:39",NULL,1482,427,0,,,1,0,0
+4,"2019-11-15 16:05:52","2019-11-15 16:05:52",NULL,1345,668,54,other,high_education,0,1,1
+5,"2019-11-18 12:25:52","2019-11-18 12:25:52",NULL,1838,949,18,male,high_education,0,0,0
+6,"2019-11-18 14:35:26","2019-11-18 14:35:26",NULL,1838,949,18,male,primary_school,0,0,0
